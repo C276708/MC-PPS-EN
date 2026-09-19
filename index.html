@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MC Quick Access</title>
+  <meta name="description" content="Play Minecraft in your browser" />
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#fff;color:#111;font-family:system-ui,sans-serif;padding:24px}
+    .wrap{max-width:1200px;margin:0 auto}
+    hr{border:0;height:1px;background:#e0e0e0;margin:20px 0}
+    .pp{text-align:center;margin:12px 0 6px;color:#0d47a1;font-size:20px}
+    .ppp{text-align:center;margin:0 0 22px;color:#0d47a1;font-size:15px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+    .card{background:#fff;padding:18px;border:1px solid #d0d0d0;display:flex;flex-direction:column;justify-content:space-between;min-height:150px}
+    .card .chip{display:inline-block;padding:6px 8px;font-size:12px;background:#e8f0fe;color:#555}
+    .chip1{background:#1a73e8;color:#fff!important}
+    .chip2{background:#0d47a1;color:#fff!important}
+    .chip3{background:#e67e22;color:#fff!important}
+    .chip4{background:#8e44ad;color:#fff!important}
+    .chip5{background:#27ae60;color:#fff!important}
+    .chip6{background:#e74c3c;color:#fff!important}
+    .chip7{background:#d35400;color:#fff!important}
+    .chip8{background:#2c3e50;color:#fff!important}
+    .card h3{margin:6px 0;font-size:18px}
+    .ver{font-size:12px;color:#555;margin-bottom:10px}
+    .features{font-size:13px;color:#333;margin:10px 0;line-height:1.5}
+    .btn{display:inline-block;background:#1a73e8;color:#fff;padding:10px 16px;cursor:pointer;text-decoration:none;font-weight:700;text-align:center;border:0}
+    .btn:hover{background:#0d47a1}
+    .siz{font-size:12px;color:#888}
+    /* Verification overlay */
+    .mask{
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,0.75);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        z-index:999;
+    }
+    .box{
+        background:white;
+        padding:30px;
+        border-radius:12px;
+        text-align:center;
+    }
+    .hide{
+        display:none !important;
+    }
+  </style>
+</head>
+<body>
+
+<!--Human verification popup-->
+<div id="captchaMask" class="mask">
+    <div class="box">
+        <h3>🔐 Please complete the human verification to enter the site</h3>
+        <br>
+        <div class="h-captcha" data-sitekey="d332951c-ced2-417c-8938-7d8e23788266" data-callback="verifySuccess"></div>
+    </div>
+</div>
+
+<div class="wrap">
+
+  <p class="pp">Browser Minecraft Servers</p>
+  <p class="ppp">Play directly in your browser — no client download required</p>
+  <div class="grid">
+
+    <div class="card"><div><span class="chip chip3">Third-Party</span><h3>Eaglercraft</h3><div class="ver">Official Demo Site</div><div class="features">🎮 The original Eaglercraft experience<br>⚡ International, overseas nodes<br>🌏 English original only</div></div><div><a class="btn" href="https://eaglercraft.com/" target="_blank">Play Now</a><span class="siz"> Online</span></div></div>
+
+    <div class="card"><div><span class="chip chip4">Classic</span><h3>Classic MC</h3><div class="ver">Minecraft Classic Edition</div><div class="features">🕹️ The most original MC experience<br>⚡ Lightweight, extremely fast loading<br>🌏 Runs directly in your browser</div></div><div><a class="btn" href="https://classic.minecraft.net/" target="_blank">Play Now</a><span class="siz"> Online</span></div></div>
+
+    <div class="card"><div><span class="chip chip5">Third-Party</span><h3>Mineblocks</h3><div class="ver">Web-based MC Variant</div><div class="features">🎮 A web game similar to MC<br>⚡ Play instantly<br>🌏 Global servers</div></div><div><a class="btn" href="https://www.mineblocks.com/" target="_blank">Play Now</a><span class="siz"> Online</span></div></div>
+
+    <div class="card"><div><span class="chip chip6">Multiplayer</span><h3>NetherGames</h3><div class="ver">MC Multiplayer Server</div><div class="features">👥 Large multiplayer server<br>⚡ No premium account needed, connect from browser<br>🌏 International server</div></div><div><a class="btn" href="https://nethergames.org/" target="_blank">Play Now</a><span class="siz"> Online</span></div></div>
+
+  </div>
+
+  <hr>
+
+  <p class="pp">Official Entrances</p>
+  <p class="ppp">Click the button below to jump straight to the official page</p>
+  <div class="grid">
+
+    <div class="card" style="border-color:#1a73e8"><div><span class="chip chip8">International</span><h3>Minecraft International</h3><div class="ver">Java & Bedrock Edition</div><div class="features">🌍 Globally available, authentic experience<br>💻 Java Edition + Bedrock Edition<br>🔄 Cross-platform multiplayer</div></div><div><a class="btn" href="https://www.minecraft.net/" target="_blank">Visit Official Site</a><span class="siz"> Official</span></div></div>
+
+  </div>
+
+</div>
+
+<script>
+//Verification success callback
+function verifySuccess(token){
+    document.getElementById("captchaMask").classList.add("hide");
+}
+</script>
+
+</body>
+</html>
